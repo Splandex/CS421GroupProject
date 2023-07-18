@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container px-1">
+    <div class="row">
+        <div class="col-xs">
+            <br>
+
+            <h1>Confirm purchase?</h1>
+            <h5>By hitting confirm, you are confirming your fake purchase of {{PageName}} by {{Author}}. Are you sure you want to confirm this purchase?</h5>
+            <button type="button" class="btn btn-secondary">
+                <a href="{{url_for('purchase_success')}}" class="text-light">
+                    Confirm purchase
+                </a>
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
