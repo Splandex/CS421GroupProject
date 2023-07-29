@@ -1,0 +1,41 @@
+<!-- The html page that everything extends off of. Includes navbar and logo -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bookstore | {{PageName}}</title>
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/fontawesome.min.css">
+  </head>
+  <body>
+    <h1>Bookstore</h1>
+    <nav class = "navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{{url_for('index')}}">HomePage</a>
+      <a class="navbar-brand" href="{{url_for('view_book', bookName='Epic Book')}}">View Book</a>
+      <a class="navbar-brand" href="{{url_for('user_homepage')}}">Users</a>
+      <a class="navbar-brand" href="{{url_for('employee_homepage')}}">Employees</a>
+    </nav>
+    <br>
+    <hr>
+        <p class="pass" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; font-weight: 530; color: black">User Login</p>
+        <hr>
+        <input type="text" id="user" placeholder="Email"><br>
+        <input type="text" id="pwd" placeholder="Password"><br>
+        <a class='btn btn-primary' href="{{url_for('user_signin')}}">
+            <input type="submit" value="Login">
+        </a>
+        <a class='btn btn-primary' href="{{url_for('user_signup')}}">
+          <input type="submit" value="Sign Up">
+      </a>
+    {% block content%}
+
+
+    {% endblock %}
+  </body>
+</html>
