@@ -7,14 +7,44 @@
             <br>
 
             <h1>Confirm purchase?</h1>
-            <h5>By hitting confirm, you are confirming your fake purchase of {{PageName}} by {{Author}}. Are you sure you want to confirm this purchase?</h5>
-            <button type="button" class="btn btn-secondary">
-                <a href="{{url_for('purchase_success')}}" class="text-light">
-                    Confirm purchase
-                </a>
-            </button>
+            <h5>By hitting confirm, you are confirming your purchase of {{ PageName }} by {{ Author }}. Are you sure you want to confirm this purchase?</h5>
+
+            <form method="post" action="{{ url_for('purchase_success') }}">
+                <div class="type">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" class="form" id="firstName" name="firstName" required>
+                </div>
+                <div class="type">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" class="form" id="lastName" name="lastName" required>
+                </div>
+                <div class="type">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form" id="email" name="email" required>
+                </div>
+                <input type="hidden" name="bookName" value="{{ PageName }}">
+                <div class="type">
+                    <label for="shippingMethod">Shipping Method:</label>
+                    <select class="form" id="shippingMethod" name="shippingMethod">
+                        <option value="Pickup">Pickup in Store</option>
+                        <option value="Ship">Ship to Me</option>
+                    </select>
+                </div>
+                <div class="type" id="shippingAddress">
+                    <label for="address">Shipping Address:</label>
+                    <textarea class="form" id="address" name="address" rows="3" placeholder="Enter your shipping address"></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Confirm purchase</button>
+            </form>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("shippingMethod").addEventListener("change", function () {
+        var shippingAddress = document.getElementById("shippingAddress");
+        shippingAddress.style.display = this.value === "Ship" ? "block" : "none";
+    });
+</script>
 
 {% endblock %}
