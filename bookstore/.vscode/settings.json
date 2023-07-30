@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "m:\\University\\Semester-5\\Web-Engineering\\apache-tomcat-8.5.40\\lib\\jsp-api.jar",
+        "m:\\University\\Semester-5\\Web-Engineering\\apache-tomcat-8.5.40\\lib\\servlet-api.jar"
+    ],
+    "liveServer.settings.port": 5501
+}
