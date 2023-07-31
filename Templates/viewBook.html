@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+
+<!-- Uses a container with rows and columns to format. All bootstrap stuff -->
+<div class="container px-1">
+    <div class="row">
+        <div class="col-xs">
+            <div class="col-xs-12">
+                <img src="{{ImageName}}" class="border border-dark p-3 rounded float-left" id="BookViewImage" alt="Image not loading"></img>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="col-md-12">
+                <br>
+                <h2>{{PageName}}</h2>
+                <h4>By {{Author}}</h4>
+                <h5>Published in {{YearPublished}}</h5>
+                <h5>{{Genre}}</h5>
+                <p>{{BookDescription}}</p>
+
+                <br>
+                <button type="button" class="btn btn-secondary">
+                    <a href="{{url_for('purchase_book', bookName=PageName)}}" class="text-light">
+                        Purchase Item
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <h3>Reviews:</h3>
+    <div class="p-3 border bg-light">
+        <h5>Leave a review:</h5>
+        <form method="post" action="{{ url_for('view_book', bookName=PageName) }}">
+            <label for="review">Your review:</label><br>
+            <input type="text" id="fname" name="review"><br>
+            <input type="submit">	
+        </form>
+    </div>
+    <br>
+    <h4>User Reviews:</h4>
+    <div>
+        <!-- Acts as a normal for loop inside of html O: -->
+        {% for review in Reviews %}
+        <div class="p-3 border bg-light">
+            <p>{{review}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

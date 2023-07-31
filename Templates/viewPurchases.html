@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr>
+<h2>Purchases</h2>
+<hr>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Purchase ID</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Shipping Method</th>
+        <th scope="col">Shipping Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for purchase in purchases %}
+      <tr>
+        <td>{{ purchase[0] }}</td>
+        <td>{{ purchase[1] }}</td>
+        <td>{{ purchase[2] }}</td>
+        <td>{{ purchase[3] }}</td>
+        <td>{{ purchase[4] }}</td>
+        <td>{{ purchase[5] }}</td>
+        <td>{{ purchase[6] }}</td>
+        <td>{{ purchase[7] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+

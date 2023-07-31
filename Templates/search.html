@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<hr>
+    <p class="pass" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; font-weight: 530; color: black">Search</p>
+    <hr>
+    <!-- TODO get search to work -->
+    <form method="post" action="{{ url_for('book_search') }}">
+        <input type="text" id="search" name="search">
+        <button type="submit" class="btn btn-secondary">Find books</button>
+    </form>
+    <div class="grid-container">
+        {% for book in books %}
+
+        <div>
+            <a href="{{url_for('view_book', bookName = book['title'])}}">
+                <h4>{{book['title']}}</h4>
+                <img src = "{{book['imageName']}}" alt = "book" width="200" height="200"></img>
+            </a>
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
+{% endblock %}

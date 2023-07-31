@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<hr>
+<h2>Worker's Homepage</h2>
+<hr>
+<a class="signupnow" style="font-family:Arial, Helvetica, sans-serif; font-size: medium; font-weight: 500; 
+    color: blue" href="{{url_for('view_inventory')}}">View Inventory</a>
+  <a class="signupnow" style="font-family:Arial, Helvetica, sans-serif; font-size: medium; font-weight: 500; 
+  color: blue" href="{{url_for('view_purchases')}}">View Customer Purchases</a>
+
+
+{% endblock %}
+

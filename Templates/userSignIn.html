@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<hr>
+<p class="pass" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; font-weight: 530; color: black">Login</p>
+<hr>
+<form method="post" action="{{ url_for('user_signin') }}">
+  <input type="text" id="Email" name = "Email" placeholder="Email"><br>
+  <input type="password" id="Password" name = "Password" placeholder="Password"><br>
+  <input type="submit" value="Login">
+</form>
+
+
+<a href="{{url_for('user_signup')}}">Signup for free</a>
+
+{% if errorMsg %}
+    <p>{{ errorMsg }}</p>
+{% endif %}
+
+{% endblock %}

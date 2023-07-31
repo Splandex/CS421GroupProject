@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content%}
+<br>
+<hr>
+    <p class="pass" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; font-weight: 530; color: black">Thanks for signing up!</p>
+    <hr>
+    <a class="signupnow" style="font-family:Arial, Helvetica, sans-serif; font-size: medium; font-weight: 500; 
+    color: blue" href="{{url_for('user_signin')}}">Your account has been created! Click here to redirect to the sign in page.</a>
+
+{% endblock %}

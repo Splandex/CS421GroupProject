@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<br>
+<hr>
+<p class="pass" style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: xx-large; font-weight: 530; color: black">Sign Up</p>
+<hr>
+
+<form method="post" action="{{ url_for('user_signup') }}">
+    <input type="text" name="Email" id="user" placeholder="Enter Email"><br>
+    <input type="text" name="Password1" id="pwd" placeholder="Enter Password"><br>
+    <input type="text" name="Password2" id="user" placeholder="Confirm Password"><br>
+    <input type="submit" value="Sign Up">
+</form>
+
+<p>Password must be between 8 to 20 characters long.</p>
+
+{% if errorMsg %}
+    <p>{{ errorMsg }}</p>
+{% endif %}
+
+<a class="signupnow" style="font-family:Arial, Helvetica, sans-serif; font-size: medium; font-weight: 500; 
+color: blue" href="{{url_for('user_homepage')}}">Already have an account? Sign in here</a>
+
+
+{% endblock %}

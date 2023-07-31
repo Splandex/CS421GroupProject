@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+
+<style>
+
+  body {
+    background-color: #D6B77B;
+    text-align: center;
+  }
+  
+  img {
+    width: 100%;
+  }
+
+  .sale {
+    font-family: 'IM Fell DW Pica', serif;
+    color: #FFF9F3;
+    font-size: 50px;
+    margin-top: 20px;
+  }
+
+  .code {
+    font-family: 'Lusitana', serif;
+    color: #414B3B; 
+    font-size: 60px;
+    margin-bottom: 90px;
+  }
+
+  
+  .subtitle {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 40px; 
+    font-family: 'Lusitana', serif;
+    color: #414B3B; 
+  }
+
+  p {
+    margin-bottom: 40px;
+    font-family: 'IM Fell DW Pica', serif;
+    color: #FFF9F3;
+    margin-top: 20px;
+    }
+
+  
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    margin: 7px 0;
+  }
+
+  .image-container img {
+    width: 150px; 
+    height: auto;
+    border-radius: 5px; 
+    margin-right: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 1, 5); 
+  }
+
+  .image-container img:first-child {
+    margin-left: 10px; 
+  }
+
+  .image-container .book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IM Fell DW Pica', serif;
+    color: #414B3B; 
+  }
+
+  .link {
+    color: #FFF9F3;
+    font-family: 'Lusitana', serif;
+    font-size: 15px;
+    margin-top: 20px; 
+    margin-bottom: 70px;
+  }
+
+  .comingsoon {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 80px; 
+    font-family: 'Lusitana', serif;
+    color: #414B3B; 
+  }
+
+  .contact {
+    text-align: left;
+    font-size: 28px; 
+    font-family: 'IM Fell DW Pica', serif;
+    color: #414B3B; 
+  }
+
+  .chat {
+    text-align: left;
+    font-size: 20px;
+    font-family: 'IM Fell DW Pica', serif;
+    color: #414B3B; 
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: 10px;
+    align-items: center;
+    border-radius: 50px;
+  }
+
+  .social-media .icon {
+    width: 50px;
+    height: auto;
+    margin: 0 15px; 
+    border-radius: 50px;
+  }
+ 
+
+</style>
+
+<h1 class="sale">30% off all books with code:</h1>
+<h2 class="code">SUMMER2023</h2>
+
+
+
+<h1 class="subtitle">BEST SELLERS</h1>
+<p>............................................................</p>
+
+<div class="image-container">
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='giveuthesun.png') }}" alt="I'll Give You The Sun">
+      <span class="book-label">I'll Give You The Sun</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='hungergames.png') }}" alt="The Hunger Games">
+      <span class="book-label">The Hunger Games</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='legend.png') }}" alt="Legend">
+      <span class="book-label">Legend</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='sixofcrows.png') }}" alt="Six of Crows">
+      <span class="book-label">Six of Crows</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='throneofglass.png') }}" alt="Throne of Glass">
+      <span class="book-label">Throne of Glass</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='wewereliars.png') }}" alt="We Were Liars">
+      <span class="book-label">We Were Liars</span>
+    </div>
+  </div>
+
+  <a href="{{url_for('default_book_search')}}" class="link">SHOP NOW</a>
+
+
+  <h1 class="comingsoon">COMING SOON</h1>
+<p>............................................................</p>
+
+<div class="image-container">
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='itendswithus.png') }}" alt="It Ends With Us">
+      <span class="book-label">It Ends With Us</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='oppenheimer.png') }}" alt="Oppenheimer">
+      <span class="book-label">Oppenheimer</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='happyplace.png') }}" alt="Happy Place">
+      <span class="book-label">Happy Place</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='atomichabits.png') }}" alt="Atomic Habits">
+      <span class="book-label">Atomic Habits</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='lessonsinchemistry.png') }}" alt="Lessons in Chemistry">
+      <span class="book-label">Lessons in Chemistry</span>
+    </div>
+    <div class="book-container">
+      <img class="book" src="{{ url_for('static', filename='summeriturnedpretty.png') }}" alt="The Summer I Turned Pretty">
+      <span class="book-label">The Summer I Turned Pretty</span>
+    </div>
+  </div>
+
+  <p>available for pre-order on 8/15</p>
+
+  <h1 class="comingsoon">CONTACT US</h1>
+  <p>............................................................</p>
+
+  <h3 class="contact">Need Help? Our support team is here for you!</h3>
+  <p class="chat">Chat with us or call us at 1-800-111-1111 to reach our 24/7 UAB Book Store Support Team</p>
+
+  <div class="social-media">
+    <div class="icon">
+      <a href="https://facebook.com"><img class="book" src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook"></a>
+    </div>
+    <div class="icon">
+      <a href="https://instragram.com"><img class="book" src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram"></a>
+    </div>
+    <div class="icon">
+      <a href="https://pinterest.com"><img class="book" src="{{ url_for('static', filename='pinterest.png') }}" alt="Pinterest"></a>
+    </div>
+    <div class="icon">
+      <a href="https://gmail.com"><img class="book" src="{{ url_for('static', filename='mail.png') }}" alt="Mail"></a>
+    </div>
+  </div>
+
+ 
+{% endblock %}
+
